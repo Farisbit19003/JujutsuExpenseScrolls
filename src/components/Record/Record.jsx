@@ -97,7 +97,7 @@ const Record = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="flex py-2 justify-center items-center">
         <div className="flex flex-col md:w-1/2 w-3/4 h-fit shadow-xl rounded-md p-3 bg-purple-300">
           <h1 className="flex justify-center my-2 items-center md:text-2xl text-lg font-dancing font-bold">
             BALANCE TRACKER
