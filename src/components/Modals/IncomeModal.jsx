@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const IncomeModal = ({ open, onClose, addIncome }) => {
   const [incomeAmount, setIncomeAmount] = useState("");
@@ -17,6 +19,10 @@ const IncomeModal = ({ open, onClose, addIncome }) => {
       amount: incomeAmount,
       description: incomeDescription,
     };
+    if (!incomeAmount || !incomeDescription) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
     addIncome(income);
     onClose();
     setIncomeAmount("");
@@ -67,6 +73,7 @@ const IncomeModal = ({ open, onClose, addIncome }) => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </>
   );
 };
